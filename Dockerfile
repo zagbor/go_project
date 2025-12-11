@@ -4,7 +4,9 @@ FROM golang:1.22-alpine AS builder
 WORKDIR /app
 
 # Download dependencies
-COPY go.mod go.sum ./
+COPY go.mod ./
+# Missing go.sum locally due to environment issues, so we tidy inside container
+RUN go mod tidy
 RUN go mod download
 
 # Build the application

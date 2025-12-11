@@ -19,7 +19,6 @@ go run main.go
 
 ### Через Docker Compose
 ```bash
-docker-compose up --build -d
 ```
 
 ## Тестирование
